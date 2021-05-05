@@ -1,0 +1,105 @@
+<body class="bg-primary">
+    <header>
+            <nav class="navbar sticky-top navbar-expand-lg navbar-dark p-md-3 bg-primary">
+                <div class="container">
+                    <a class="navbar-brand" href="/">
+                        <h4>Meeting Point</h4>
+                    </a>
+                    <button id="toggleBtn" class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <i class="bi bi-list mobile-nav-toggle"></i>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarText">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+                        <div>
+                            <div class="collapse navbar-collapse" id="navbarText">
+                                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                    <li class="nav-item">
+                                        <a class="nav-link text-white" aria-current="page" href="#">Inicio</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-white" href="#">Eventos</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-white" href="#">Contacto</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-white" href="#">¿Como usar Meeting Point?</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-white" href="#">Iniciar Sesión</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <button class="btn btn-sm mt-1 bg-secondary rounded-pill">Crear mi
+                                            evento</button>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main class="mt-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-sm-12 login-sec bg-secondary rounded">
+                        <h2 class="text-center">Inicio de sesión</h2>
+                        <form action="#" method="POST" class="login-form" >
+                            <div class="form-group mt-5">
+                                <label for="username">Correo</label>
+                                <input class="form-control form-control-success bg-primary"
+                                    placeholder="correo@correo.cl*" name="username">
+                            </div>
+                            <div class="form-group mt-4">
+                                <label for="password">Contraseña</label>
+                                <input class="form-control form-control-success bg-primary" type="password"
+                                    placeholder="**********" name="password">
+
+                            </div>
+                            <div class="d-grid gap-2 d-md-flex justify-content-center mt-2">
+                                <button type="submit" class="btn mt-4 bg-primary">Ingresar</button>
+                            </div>
+                            <div class="text-center mt-5">
+                                <p>¿No estas registrado en Meeting Point?
+                                    <br>
+                                    <a href="/register">Registrate aqui</a>
+                                    <input type="hidden" value="true">
+                                </p>
+                            </div>
+                        </form>
+
+                    </div>
+                    <div class="col-md-8 banner-sec">
+                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active">
+                                </li>
+                                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                            </ol>
+                            <div class="carousel-inner" role="listbox">
+                                <div class="carousel-item active">
+                                    <img class="d-block img-fluid" src="img/hero.jpg" alt="First slide">
+                                    <div class="carousel-caption  d-md-block">
+                                        <div class="banner-text">
+                                            <h2>Ingresa a Meeting Point</h2>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                                                enim ad minim veniam, quis nostrud exercitation</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+        </main>
+        <div class="mt-5">
+
+        </div>
+
+        <script src="/js/login.js"></script>
