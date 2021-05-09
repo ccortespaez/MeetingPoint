@@ -51,6 +51,8 @@ app.use((req, res, next) => {
 //routes
 app.use(require('./routes'));
 app.use(require('./routes/auth'));
+app.use(require('./routes/data'));
+app.use(require('./routes/community'));
 
     
 //server

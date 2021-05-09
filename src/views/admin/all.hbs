@@ -1,0 +1,15 @@
+   <div class="mt-4 col-md-8 container">
+            <div class="row">
+                {{#each data}}
+                <div class="card col-md-3 p-3 m-2">
+                    <div class="card-header">
+                    <img src="{{image}}" alt="image" class="img-thumbail img-fluid">
+                    <strong class="card-title">{{title}}</strong>
+                    </div>
+                    <div class="card-body">
+                        {{description}}
+                    </div>
+                </div>
+                    {{/each}}
+            </div>
+        </div>

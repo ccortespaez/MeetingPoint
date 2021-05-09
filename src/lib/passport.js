@@ -35,7 +35,8 @@ passport.use('local.register', new LocalStrategy({
     const newUser ={
         username,
         password,
-        fullname
+        fullname,
+        rol: 'user'
     };
     newUser.password = await helpers.encryptPassword(password);
 
