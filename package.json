@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon src/"
+    "start": "nodemon src/",
+    "doc": "npx jsdoc -c jsdoc.json"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +18,7 @@
     "express-mysql-session": "^2.1.5",
     "express-session": "^1.17.1",
     "express-validator": "^6.10.1",
+    "jsdoc": "^3.6.6",
     "morgan": "^1.10.0",
     "mysql": "^2.18.1",
     "passport": "^0.4.1",
