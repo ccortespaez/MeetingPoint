@@ -71,28 +71,38 @@
                 <h2 class="text-center pb-5">Ultimos eventos publicados</h2>
             </div>
             <div class="row">
-                
-                <div class="col-lg-9 col-md-8">
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="card-title">
-                                Edit Data
+                <div class="col-md-4 col-sm-12 login-sec bg-secondary rounded">
+                    <form aaction="/admin/data-edit/{{data.id}}" method="POST">
+                        <div class="form-group">
+                            <label>Nombre del evento</label>
+                            <input class="form-control form-control-success bg-primary"
+                                placeholder="Ingrese el nombre de su evento" name="title" value={{data.title}}>
+                        </div>
+                        <div class="form-group mt-4">
+                            <label>Descripción</label>
+                            <input class="form-control form-control-success bg-primary"
+                                placeholder="Detalle de su evento" name="description" value={{data.description}}>
+                        </div>
+                        <div class="form-group mt-4">
+                            <label>URL Imagen</label>
+                            <input class="form-control form-control-success bg-primary"
+                                placeholder="https://dominio.cl/image.jpg" name="image" value={{data.image}}>
+                        </div>
+                        <div class="form-group mt-4">
+                            <label>Telefono de contacto</label>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text bg-primary">+569</span>
+                                <input type="number" class="form-control" name="phone" value={{data.phone}}>
                             </div>
                         </div>
-                        <div class="card-body">
-                            <form action="/admin/data-edit/{{data.id}}" method="POST">
-                                <input type="text" name="title" class="form-control" placeholder="Title" value={{data.title}}>
-                                <input type="text" name="description" class="form-control" placeholder="description" value={{data.description}}>
-                                <input type="text" name="image" class="form-control" placeholder="image url" value={{data.image}}>
-
-                                <div class="d-grid gap-2">
-                                    <button class="btn btn-success" type="submit">
-                                        sucess
-                                    </button>
-                                </div>
-                            </form>
+                      
+                        <div class="d-grid gap-2">
+                            <button class="btn bg-primary mt-3  " type="submit">
+                                Agregar
+                            </button>
                         </div>
-                    </div>
+                    </form>
+
                 </div>
             </div>
         </div>
