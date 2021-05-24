@@ -71,6 +71,4 @@ router.post('/admin/data-edit/:id', async (req, res) => {
     res.redirect('/admin');
 })
 
-
-
 module.exports = router;

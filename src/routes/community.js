@@ -15,4 +15,5 @@ router.get('/admin/view-event/:id', async (req, res) => {
     res.render('admin/view', {data: data[0]});
 })
 
+
 module.exports = router;
