@@ -69,20 +69,20 @@ router.post('/admin/data-edit/:id', async (req, res) => {
     const { title, description, image, phone, animator, artist, datestart, datefinish, hour, location, type, age, streaming, producer, capacity } = req.body;
     const newData = {
         title, 
-        description,
-        image,
-        phone,
-        animator,
-        artist,
-        datestart, 
-        datefinish,
-        hour,
-        location,
-        type,
-        age,
-        streaming, 
-        producer, 
-        capacity
+       description,
+       image,
+       phone,
+       animator,
+       artist,
+       datestart, 
+       datefinish,
+       hour,
+       location,
+       type,
+       age,
+       streaming, 
+       producer, 
+       capacity
     };
     await pool.query('UPDATE eventos SET ? WHERE id = ?', [newData, id]);
     req.flash('success', 'Data updated');
