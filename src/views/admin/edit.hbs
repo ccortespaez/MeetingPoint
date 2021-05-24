@@ -2,11 +2,12 @@
     <div class="d-flex" id="content-wrapper">
         <div class="w-100">
             <!-- Navbar -->
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
                 <div class="container">
                     <button class="btn admin-bg-grey" type="button" data-bs-toggle="offcanvas"
                         data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
-                        <i class="bi bi-caret-right-fill"></i>
+                        <i class="bi bi-caret-right-fill" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+                            aria-controls="offcanvasExample"></i>
                     </button>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -34,11 +35,11 @@
 
             <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
                 aria-labelledby="offcanvasExampleLabel">
-                <div class="offcanvas-header admin-bg-primary">
+                <div class="offcanvas-header bg-secondary">
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <!-- Sidebar -->
-                <div id="sidebar-container" class="admin-bg-primary">
+                <div id="sidebar-container" class="bg-secondary ">
                     <div class="logo">
                         <h4 class="text-light font-weight-bold">
                             <hr />
@@ -49,11 +50,10 @@
                     <div class="menu">
                         <a href="panel_admin" class="d-block ps-3 border-0 a_sideBar">
                             <i class='bx bxs-home bx-sm'></i>
-                            Home</a>
+                            Inicio</a>
                         <a href="#" class="d-block ps-3 mt-3 border-0 a_sideBar"><i class='bx bx-restaurant bx-sm'></i>
-                            Restaurants</a>
-                        <a href="#" class="d-block ps-3 mt-3 border-0 a_sideBar"><i class='bx bx-user bx-sm'></i>
-                            Consumidores</a>
+                            Eventos</a>
+
                     </div>
                 </div>
                 <!-- Fin sidebar -->
@@ -68,31 +68,147 @@
     <section id="events">
         <div class="container">
             <div class="section-event">
-                <h2 class="text-center pb-5">Ultimos eventos publicados</h2>
+                <h2 class="text-center pb-3">Edita el evento </h2>
             </div>
             <div class="row">
-                
-                <div class="col-lg-9 col-md-8">
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="card-title">
-                                Edit Data
+                <div class="col-lg-12 bg-secondary rounded">
+                     <form action="/admin/data-edit/{{data.id}}" method="POST">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group mt-4">
+                                    <label>Nombre del evento</label>
+                                    <input class="form-control form-control-success bg-primary"
+                                        placeholder="Ingrese el nombre de su evento" name="title" value={{data.title}}>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group mt-4">
+                                    <label>Ubicacion</label>
+                                    <input class="form-control form-control-success bg-primary"
+                                        placeholder="Ingrese la ubicacion" name="location" value={{data.location}}>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group mt-4">
+                                    <label>Descripción</label>
+                                    <textarea class="form-control bg-primary textarea-description" cols="30" rows="2"
+                                        name="description">{{data.description}}</textarea>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <div class="form-group mt-4">
+                                    <label>Imagen</label>
+                                    <input class="form-control form-control-success bg-primary"
+                                        placeholder="URL de la imagen" name="image" value={{data.image}}>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="form-group mt-4">
+                                    <label for="">Evento para mayores de</label>
+                                    <input class="form-control form-control-success bg-primary"
+                                        placeholder="Ingrese la edad minima para participar" name="age" type="number" value={{data.age}}>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="form-group mt-4">
+                                    <label>Telefono de contacto</label>
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text bg-primary">+569</span>
+                                        <input type="number" class="form-control" name="phone" value={{data.phone}}>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group mt-4">
+                                    <label>Animador</label>
+                                    <input class="form-control form-control-success bg-primary"
+                                        placeholder="Ingrese el nombre del animador/a" name="animator" value={{data.animator}}>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group mt-4">
+                                    <label>Artista</label>
+                                    <input class="form-control form-control-success bg-primary"
+                                        placeholder="Ingrese el nombre del o los artistas" name="artist" value={{data.artist}}>
+                                </div>
+
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group mt-4">
+                                    <label>Plataforma Streaming</label>
+                                    <input class="form-control form-control-success bg-primary"
+                                        placeholder="URL de la retransmision" name="streaming" value={{data.streaming}}>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+
+                                <div class="form-group mt-4">
+                                    <label>Productora</label>
+                                    <input class="form-control form-control-success bg-primary"
+                                        placeholder="Ingrese a la productora organizadora" name="producer" value={{data.producer}}>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group mt-4">
+                                    <label>Aforo Maximo</label>
+                                    <input class="form-control form-control-success bg-primary"
+                                        placeholder="Ingrese la ubicacion" name="capacity" type="number" value={{data.capacity}}>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="form-group mt-4">
+                                    <label>Fecha inicio</label>
+                                    <input class="form-control form-control-success bg-primary"
+                                        placeholder="Ingrese la ubicacion" name="datestart" type="date" value={{data.datestart}}>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="form-group mt-4">
+                                    <label>Fecha termino</label>
+                                    <input class="form-control form-control-success bg-primary"
+                                        placeholder="Ingrese la ubicacion" name="datefinish" type="date" value={{data.datefinish}}>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="form-group mt-4">
+                                    <label>Hora de inicio</label>
+                                    <input class="form-control form-control-success bg-primary"
+                                        placeholder="Ingrese la ubicacion" name="hour" type="time" value={{data.hour}}>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="form-group mt-4">
+                                    <label for="">Tipo de evento</label>
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" value="Streaming" name="type"}>
+                                                <label class="form-check-label" for="flexRadioDefault1"
+                                                    value="Streaming" name="type">
+                                                    Streaming
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" value="Presencial" name="type">
+                                                <label class="form-check-label" for="flexRadioDefault2" >
+                                                    Presencial
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="card-body">
-                            <form action="/admin/data-edit/{{data.id}}" method="POST">
-                                <input type="text" name="title" class="form-control" placeholder="Title" value={{data.title}}>
-                                <input type="text" name="description" class="form-control" placeholder="description" value={{data.description}}>
-                                <input type="text" name="image" class="form-control" placeholder="image url" value={{data.image}}>
-
-                                <div class="d-grid gap-2">
-                                    <button class="btn btn-success" type="submit">
-                                        sucess
-                                    </button>
-                                </div>
-                            </form>
+                        <div class="d-grid gap-2">
+                            <button class="btn bg-primary mt-3  " type="submit">
+                                Agregar
+                            </button>
                         </div>
-                    </div>
+                    </form>
+
                 </div>
             </div>
         </div>
