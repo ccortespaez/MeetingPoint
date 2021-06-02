@@ -1,0 +1,110 @@
+ <header>
+            <nav class="navbar sticky-top navbar-expand-lg navbar-dark p-md-3 bg-primary">
+                <div class="container">
+                    <a class="navbar-brand" href="/">
+                        <h4>Meeting Point</h4>
+                    </a>
+                    <button id="toggleBtn" class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <i class="bi bi-list mobile-nav-toggle"></i>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarText">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+                        <div>
+                            <div class="collapse navbar-collapse" id="navbarText">
+                                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                    <li class="nav-item">
+                                        <a class="nav-link text-white" aria-current="page" href="/">Inicio</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-white" href="#">Eventos</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-white" href="#">Contacto</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-white" href="#">¿Como usar Meeting Point?</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-white" href="/login">Iniciar Sesión</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <button class="btn btn-sm mt-1 bg-secondary rounded-pill">Crear mi
+                                            evento</button>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+<main>
+  <section id="events">
+    <div class="container">
+      <div class="section-event">
+        <h2 class="text-center pb-5">Escoje tus eventos favoritos y disfruta</h2>
+      </div>
+      <div class="row">
+        {{#each data}}
+        <div class="col-lg-4 col-md-6">
+          <div class="event" data-aos="fade-up" data-aos-delay="300">
+            <img src="{{image}}" alt="image" class="img-fluid">
+            <div class="details">
+              <h3><a href="event-details.html">{{title}}</a></h3>
+                  <p>Modalidad: {{type}}</p>
+              <div class="button-show">
+                <a href="/view-event/{{id}}" class="btn btn-sm bg-primary">Ver más</a>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+  </section><!-- End Speakers Section -->
+</main>
+<footer class="bg-primary">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h2 class="widget_title green">Meeting Point</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quia repellat aperiam at beatae
+          reiciendis.</p>
+      </div>
+      <div class="col-md-4 widget">
+        <h2 class="widget_title green">Enlaces directos</h2>
+        <ul>
+          <li><a href="">Inicio</a></li>
+          <li><a href="">Eventos</a></li>
+          <li><a href="">Crear Evento</a></li>
+          <li><a href="">Iniciar sesión</a></li>
+          <li><a href="">Registro</a></li>
+          <li><a href="">Acceso administrador</a></li>
+
+        </ul>
+      </div>
+      <div class="col-md-4 ">
+        <h2 class="widget_title green">Contactanos</h2>
+        <div class="row2">
+          <strong>Dirección: Viña del mar</strong>
+        </div>
+        <div class="row3">
+          <strong>Email: contacto@meetingpoint.cl</strong>
+        </div>
+        <div class="row4">
+          <strong>Telefono: +56912345678</strong>
+        </div>
+        <div class="social col-md-12">
+          <a href="https://facebook.com"><i class="bi bi-facebook"></i></a>
+          <a href="https://twitter.com"><i class="bi bi-twitter"></i></a>
+          <a href="https://instagram.com"><i class="bi bi-instagram"></i></a>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

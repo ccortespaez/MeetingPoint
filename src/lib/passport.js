@@ -5,37 +5,40 @@ const pool = require('../database');
 const helpers = require('./helpers');
 
 passport.use('local.login', new LocalStrategy({
-    usernameField: 'username',
+    usernameField: 'email',
     passwordField: 'password',
     passReqToCallback: true
-}, async (req, username, password, done) => {
-    const rows = await pool.query('SELECT * FROM usuarios WHERE username = ?', [username])
+}, async (req, email, password, done) => {
+    const rows = await pool.query('SELECT * FROM usuarios WHERE email = ?', [email])
     console.log(req.body);
     if (rows.length > 0) {
         const user = rows[0];
         const validPassword = await helpers.matchPassword(password, user.password);
         if (validPassword) {
-            done(null, user, req.flash('success', 'Welcome ' + user.username));
+            done(null, user, req.flash('success', 'Welcome ' + user.email));
+            console.log('funciono');
         } else {
             done(null, false, req.flash('message', 'Incorrect Password'));
+            console.log('no funciono');
         }
     } else {
         return done(null, false, req.flash('message', 'The username does not exits'));
+        console.log('error');
     }
 }));
 
 passport.use('local.register', new LocalStrategy({
-
-    usernameField: 'username',
+    usernameField: 'email',
     passwordField: 'password',
     passReqToCallback: true
-}, async (req, username, password, done) => {
-    const { fullname } = req.body;
+}, async (req, email, password, done) => {
+    const { fullname, date } = req.body;
     //console.log(req.body, 'signup')
     const newUser ={
-        username,
+        email,
         password,
         fullname,
+        date,
         rol: 'user'
     };
     newUser.password = await helpers.encryptPassword(password);
