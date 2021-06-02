@@ -1,43 +1,43 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
-*{
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Roboto';
+  font-family: "Roboto";
 }
-:root{
-  --bg-primary: #1A003A !important;
-  --bg-secondary: #29156C !important;
+:root {
+  --bg-primary: #1a003a !important;
+  --bg-secondary: #29156c !important;
 }
 
 body::-webkit-scrollbar {
-  width: 12px;               /* width of the entire scrollbar */
+  width: 12px; /* width of the entire scrollbar */
 }
 
 body::-webkit-scrollbar-track {
-  background: var(--bg-secondary);        /* color of the tracking area */
+  background: var(--bg-secondary); /* color of the tracking area */
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: var(--bg-primary);    /* color of the scroll thumb */
-  border-radius: 20px;       /* roundness of the scroll thumb */
-  border: 3px solid var(--bg-secondary);  /* creates padding around scroll thumb */
+  background-color: var(--bg-primary); /* color of the scroll thumb */
+  border-radius: 20px; /* roundness of the scroll thumb */
+  border: 3px solid var(--bg-secondary); /* creates padding around scroll thumb */
 }
 
-.bg-primary{
+.bg-primary {
   background-color: var(--bg-primary) !important;
   color: white;
 }
-.bg-secondary{
+.bg-secondary {
   background-color: var(--bg-secondary) !important;
-  color:white;
+  color: white;
 }
-.navbar-toggler{
+.navbar-toggler {
   border-color: var(--bg-primary) !important;
 }
 
-.nav{
-  background-color:var(--bg-primary);
+.nav {
+  background-color: var(--bg-primary);
 }
 
 #hero {
@@ -126,7 +126,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 #events .event .details {
-  background: #14092B;
+  background: #14092b;
   position: absolute;
   left: 0;
   bottom: -40px;
@@ -154,8 +154,6 @@ body::-webkit-scrollbar-thumb {
   height: 40px;
 }
 
-
-
 #events .event .details a {
   color: #fff;
 }
@@ -164,7 +162,7 @@ body::-webkit-scrollbar-thumb {
   color: #f82249;
 }
 
-#events  .event:hover .details {
+#events .event:hover .details {
   bottom: 0;
 }
 
@@ -218,81 +216,90 @@ footer .social a i:hover {
   height: 38px;
 }
 
+.banner-sec {
+  background-size: cover;
+  min-height: 500px;
+  border-radius: 0 10px 10px 0;
+  padding: 0;
+}
 
-.banner-sec{
-  background-size:cover; 
-  min-height:500px; 
-  border-radius: 0 10px 10px 0; 
-  padding:0;}
+.carousel-inner {
+  border-radius: 0 10px 10px 0;
+}
+.carousel-caption {
+  text-align: left;
+  left: 5%;
+}
+.login-sec {
+  padding: 50px 30px;
+  position: relative;
+}
 
-.carousel-inner{
-  border-radius:0 10px 10px 0;}
-.carousel-caption{
-  text-align:left; 
-  left:5%;}
-.login-sec{
-  padding: 50px 30px; 
-  position:relative;}
+.banner-text {
+  width: 70%;
+  position: absolute;
+  bottom: 40px;
+  padding-left: 20px;
+}
+.banner-text h2 {
+  color: #fff;
+  font-weight: 600;
+}
+.banner-text h2:after {
+  content: " ";
+  width: 100px;
+  height: 5px;
+  background: #fff;
+  display: block;
+  margin-top: 20px;
+  border-radius: 3px;
+}
+.banner-text p {
+  color: #fff;
+}
 
-.banner-text{
-  width:70%; 
-  position:absolute; 
-  bottom:40px; 
-  padding-left:20px;}
-.banner-text h2{
-  color:#fff; 
-  font-weight:600;}
-.banner-text h2:after{
-  content:" "; 
-  width:100px; 
-  height:5px; 
-  background:#FFF; 
-  display:block; 
-  margin-top:20px; 
-  border-radius:3px;}
-.banner-text p{
-  color:#fff;}
-
-input{
-  border: 1px solid #14092B !important;
+input {
+  border: 1px solid #14092b !important;
 }
 
 @media handheld, only screen and (max-width: 767px) {
   .banner-sec {
-  display:none;
+    display: none;
   }
-  }
-  
-  @media only screen and (max-width: 1024px) {
+}
+
+@media only screen and (max-width: 1024px) {
   .banner-sec {
-  display:none;
+    display: none;
   }
+}
+
+@media handheld, only screen and (max-width: 1383px) {
+  .banner-sec {
+    display: none;
   }
-  
-  @media handheld, only screen and (max-width: 1383px) {
-    .banner-sec {
-    display:none;
-    }
-    }
+}
 
-    @media handheld, only screen and (max-width: 1024px) {
-      .login-sec {
-      margin: auto;
-      width: 80% !important;
-      }
-      }
+@media handheld, only screen and (max-width: 1024px) {
+  .login-sec {
+    margin: auto;
+    width: 80% !important;
+  }
+}
 
-  
+@media handheld, only screen and (max-width: 1382px) {
+  .login-sec {
+    margin: auto;
+    width: 80% !important;
+  }
+  .banner-sec {
+    display: none;
+  }
+}
 
 
-      @media handheld, only screen and (max-width: 1382px) {
-        .login-sec {
-        margin: auto;
-        width: 80% !important;
-        }
-        .banner-sec {
-          display:none;
-          }
-
-        }
-  
+@media only screen and (max-width: 748px) {
+  .details {
+    width: 10%; 
+  }
+}
