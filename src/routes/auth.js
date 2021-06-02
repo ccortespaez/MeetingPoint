@@ -1,8 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const { autheticated } = require('passport');
+const { authenticate } = require('passport');
 const passport = require('passport');
 const { isLoggedIn, isNotLoggedIn } = require('../lib/auth');
+const { body, validationResult } = require('express-validator');
 
 router.get('/login', (req, res) => {
     res.render('auth/login');
@@ -30,5 +31,7 @@ router.post('/register', passport.authenticate('local.register', {
     failureRedirect: '/register',
     failureFlash: true
 }));
+
+
 
 module.exports = router;

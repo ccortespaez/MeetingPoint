@@ -1,0 +1,75 @@
+<body class="bg-primary">
+    <header>
+        <nav class="navbar sticky-top navbar-expand-lg navbar-dark p-md-3 bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="/">
+                    <h4>Meeting Point</h4>
+                </a>
+                <button id="toggleBtn" class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <i class="bi bi-list mobile-nav-toggle"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarText">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+                    <div>
+                        <div class="collapse navbar-collapse" id="navbarText">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" aria-current="page" href="/">Inicio</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" href="#">Eventos</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" href="#">Contacto</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" href="#">¿Como usar Meeting Point?</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" href="/login">Iniciar Sesión</a>
+                                </li>
+                                <li class="nav-item">
+                                    <button class="btn btn-sm mt-1 bg-secondary rounded-pill">Crear mi
+                                        evento</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="mt-5">
+        <div class="container">
+            <div class="col-lg-12">
+                <div class="row bg-secondary rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div class="col-auto d-none d-lg-block p-4">
+                        <img src="{{data.image}}" alt="image" class="">
+                    </div>
+                    <div class="col p-4 d-flex flex-column position-static p-5">
+                        <h3 class="mb-0 mt-1">{{data.title}}</h3>
+                        <div class="d-inline mt-2">
+                            <span class="badge bg-primary">Ubicacion: {{data.location}}</span>
+                            <span class="badge bg-primary">Modalidad: {{data.type}}</span>
+                            <span class="badge bg-primary">Edad apta: {{data.age}} años</span>
+                            <span class="badge bg-primary">Aforo: {{data.capacity}} personas</span>
+                            <span class="badge bg-primary">Comienza el: {{data.datestart}}</span>
+                            <span class="badge bg-primary">Finaliza el: {{data.datefinish}}</span>
+                        </div>
+                        <div class="mb-1 text-white mt-4">¿De que trata este evento?</div>
+                        <p class="card-text mb-auto">{{data.description}}</p>
+                        <ul class="mt-2">
+                            <li>Productora: {{data.producer}}</li>
+                            <li>Animador: {{data.animator}}</li>
+                            <li>Artista: {{data.artist}}</li>
+                            <li>Contacto: {{data.phone}}</li>
+                        </ul>
+                        <button class="btn bg-primary">Inscribirse al evento</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
