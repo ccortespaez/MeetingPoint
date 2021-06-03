@@ -8,11 +8,12 @@ router.get('/admin', isLoggedIn, async(req, res) => {
     const data = await pool.query('SELECT * FROM eventos', [req.user.id]);
     if(req.user.rol_id == 1){
         res.render("admin/admin", {
-            name: req.user.username , user, data
+            name: req.user.fullname , user, data
         });
     }else if(req.user.rol_id == 2 || req.user.rol_id == 3){
         res.status(404).send("Acceso denegado");
     } 
+    
 });
 
 router.get('/admin/add', isLoggedIn, async(req, res) => {

@@ -1,13 +1,112 @@
-   <div class="mt-4 col-md-8 container">
-            <div class="row">
-                <div class="card col-md-3 p-3 m-2">
-                    <div class="card-header">
-                    <img src="{{data.image}}" alt="image" class="img-thumbail img-fluid">
-                    <strong class="card-title">{{data.title}}</strong>
+<header>
+    <div class="d-flex" id="content-wrapper">
+        <div class="w-100">
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
+                <div class="container">
+                    <button class="btn admin-bg-grey" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                        <i class="bi bi-caret-right-fill" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasExample" aria-controls="offcanvasExample"></i>
+                    </button>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="bi bi-person-circle" style="font-size: 30px;">{{name}}</i>
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li>
+                                        <a class="dropdown-item" href="/logout">Cerrar sesión</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="card-body">
-                        {{data.description}}
+                </div>
+            </nav>
+            <!-- Fin Navbar -->
+
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
+                aria-labelledby="offcanvasExampleLabel">
+                <div class="offcanvas-header bg-secondary">
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <!-- Sidebar -->
+                <div id="sidebar-container" class="bg-secondary ">
+                    <div class="logo">
+                        <h4 class="text-light font-weight-bold">
+                            <hr />
+                            Panel Administrador
+                            <hr />
+                        </h4>
+                    </div>
+                    <div class="menu">
+                        <a href="panel_admin" class="d-block ps-3 border-0 a_sideBar">
+                            <i class='bx bxs-home bx-sm'></i>
+                            Inicio</a>
+                        <a href="#" class="d-block ps-3 mt-3 border-0 a_sideBar"><i class='bx bx-restaurant bx-sm'></i>
+                            Eventos</a>
+                    </div>
+                </div>
+                <!-- Fin sidebar -->
+            </div>
+        </div>
+    </div>
+</header>
+
+<main class="admin-bg-grey">
+    <!-- Page Content -->
+    <div id="content" class="w-100 admin-bg-grey">
+        <section class="py-3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9 col-md-8">
+                        <h1 class="font-weight-bold mb-0">Gestiona tus eventos</h1>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="container">
+            <div class="col-lg-12">
+                <div class="bg-secondary row rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250">
+                    <div class="col-lg-5 d-none d-lg-block p-4">
+                        <img src="{{data.image}}" alt="image" class="img-fluid">
+                    </div>
+                    <div class="col-lg-7 p-4 d-flex flex-column position-static p-5">
+                        <h3 class="mb-0 mt-1">{{data.title}}</h3>
+                        <div class="d-inline mt-2">
+                            <span class="badge bg-primary">Ubicacion: {{data.location}}</span>
+                            <span class="badge bg-primary">Modalidad: {{data.type}}</span>
+                            <span class="badge bg-primary">Edad apta: {{data.age}} años</span>
+                            <span class="badge bg-primary">Aforo: {{data.capacity}} personas</span>
+                            <span class="badge bg-primary">Comienza el: {{data.datestart}}</span>
+                            <span class="badge bg-primary">Finaliza el: {{data.datefinish}}</span>
+                        </div>
+                        <div class="mb-1 text-white mt-4">¿De que trata este evento?</div>
+                        <p class="card-text mb-auto">{{data.description}}</p>
+                        <ul class="mt-2">
+                            <li>Productora: {{data.producer}}</li>
+                            <li>Animador: {{data.animator}}</li>
+                            <li>Artista: {{data.artist}}</li>
+                            <li>Contacto: {{data.phone}}</li>
+                        </ul>
+                        <form action="" method="POST"></form>
+                        <button class="btn bg-primary ">Inscribirse al evento</button>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
+
+        
+        
+
+    </div>
+</main>
