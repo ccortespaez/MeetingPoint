@@ -1,10 +1,4 @@
-//@ts-check
 
-/**
- * Funcion que valida los inputs de un formulario
- * @author Bootstrap
- * @function validation
- */
 (function validation() {
     'use strict'
   
