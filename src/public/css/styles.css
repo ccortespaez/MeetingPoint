@@ -297,9 +297,40 @@ input {
   }
 }
 
+.contact .info {
+  width: 100%;
+  background-color: black;
+}
 
-@media only screen and (max-width: 748px) {
-  .details {
-    width: 10%; 
-  }
+.contact .info i {
+  font-size: 20px;
+  background: #FFDF33;
+  color: #151515;
+  float: left;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  transition: all 0.3s ease-in-out;
+}
+
+.contact .info h4 {
+  padding: 0 0 0 60px;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #151515;
+}
+
+.contact .info p {
+  padding: 0 0 0 60px;
+  margin-bottom: 0;
+  font-size: 14px;
+  color: #484848;
+}
+
+.contact .info .email, .contact .info .phone {
+  margin-top: 40px;
 }

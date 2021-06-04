@@ -39,7 +39,7 @@ passport.use('local.register', new LocalStrategy({
         password,
         fullname,
         date,
-        rol_id: 1
+        rol_id: 3
     };
     newUser.password = await helpers.encryptPassword(password);
 
