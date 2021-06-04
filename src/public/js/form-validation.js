@@ -1,5 +1,11 @@
-// Example starter JavaScript for disabling form submissions if there are invalid fields
-(function () {
+//@ts-check
+
+/**
+ * Funcion que valida los inputs de un formulario
+ * @author Bootstrap
+ * @function validation
+ */
+(function validation() {
     'use strict'
   
     // Fetch all the forms we want to apply custom Bootstrap validation styles to
