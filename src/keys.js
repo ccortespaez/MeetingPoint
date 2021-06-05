@@ -5,13 +5,11 @@
  * @module
 */
 module.exports = {
-    /**
-     * Conexion con la base de datos
-     */
     database: {
-        host: 'localhost',
-        user: 'root',
-        password: '',
-        database: 'mpdb'
+        host: 'us-cdbr-east-04.cleardb.com',
+        user: 'b2bd9425c4fa8e',
+        password: '1bd9e175',
+        database: 'heroku_890ad98a3170799'
     }
 }
+
