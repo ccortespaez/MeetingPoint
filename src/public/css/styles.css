@@ -6,8 +6,8 @@
   font-family: "Roboto";
 }
 :root {
-  --bg-primary: #1a003a !important;
-  --bg-secondary: #29156c !important;
+  --bg-primary: rgb(19, 9, 42) !important;
+  --bg-secondary: rgb(41, 21, 108) !important;
 }
 
 body::-webkit-scrollbar {
@@ -79,6 +79,11 @@ body::-webkit-scrollbar-thumb {
   padding: 0 15px;
 }
 
+.btn-hero:hover {
+  font-size: 1.2em;
+  color: white;
+}
+
 @media (max-width: 991px) {
   #hero .hero-container {
     top: 70px;
@@ -126,7 +131,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 #events .event .details {
-  background: #14092b;
+  background: var(--bg-primary);
   position: absolute;
   left: 0;
   bottom: -40px;
@@ -214,6 +219,16 @@ footer .social a i:hover {
   text-align: center;
   width: 38px;
   height: 38px;
+}
+
+footer li a {
+  color: white;
+  text-decoration: none;
+}
+
+footer li a:hover {
+  color: red;
+  text-decoration: none;
 }
 
 .banner-sec {
@@ -304,7 +319,7 @@ input {
 
 .contact .info i {
   font-size: 20px;
-  background: #FFDF33;
+  background: #ffdf33;
   color: #151515;
   float: left;
   width: 44px;
@@ -331,6 +346,7 @@ input {
   color: #484848;
 }
 
-.contact .info .email, .contact .info .phone {
+.contact .info .email,
+.contact .info .phone {
   margin-top: 40px;
 }

@@ -11,7 +11,7 @@
                     <i class="bi bi-list mobile-nav-toggle"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarText">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+                    
                     <div>
                         <div class="collapse navbar-collapse" id="navbarText">
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -66,8 +66,10 @@
                             <li>Artista: {{data.artist}}</li>
                             <li>Contacto: {{data.phone}}</li>
                         </ul>
-                        <form action="" method="POST"></form>
-                        <button class="btn bg-primary ">Inscribirse al evento</button>
+                        <form action="/view-event/{{data.id}}/add-user" method="POST">
+                        <input type="text" name="usuarios_id" class="d-none" value="{{user.id}}">
+                        <input type="text" name="eventos_id" class="d-none" value="{{data.id}}">
+                        <button class="btn bg-primary" type="submit">Inscribirse al evento</button>
                         </form>
                     </div>
                 </div>
@@ -75,3 +77,44 @@
         </div>
 
     </main>
+    <footer class="bg-primary">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h2 class="widget_title green">Meeting Point</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quia repellat aperiam at beatae
+          reiciendis.</p>
+      </div>
+      <div class="col-md-4 widget">
+        <h2 class="widget_title green">Enlaces directos</h2>
+        <ul>
+          <li><a href="">Inicio</a></li>
+          <li><a href="">Eventos</a></li>
+          <li><a href="">Crear Evento</a></li>
+          <li><a href="">Iniciar sesión</a></li>
+          <li><a href="">Registro</a></li>
+          <li><a href="">Acceso administrador</a></li>
+
+        </ul>
+      </div>
+      <div class="col-md-4 ">
+        <h2 class="widget_title green">Contactanos</h2>
+        <div class="row2">
+          <strong>Dirección: Viña del mar</strong>
+        </div>
+        <div class="row3">
+          <strong>Email: contacto@meetingpoint.cl</strong>
+        </div>
+        <div class="row4">
+          <strong>Telefono: +56912345678</strong>
+        </div>
+        <div class="social col-md-12">
+          <a href="https://facebook.com"><i class="bi bi-facebook"></i></a>
+          <a href="https://twitter.com"><i class="bi bi-twitter"></i></a>
+          <a href="https://instagram.com"><i class="bi bi-instagram"></i></a>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
