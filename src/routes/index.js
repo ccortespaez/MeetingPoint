@@ -15,11 +15,6 @@ router.get('/view-event/:id', async (req, res) => {
     res.render('event', {data: data[0]});
 });
 
-router.post('/view-event/:id', async (req, res) => {
-    const {id} = req.params;
-    const data = await pool.query('SELECT * FROM eventos WHERE id = ?', [id]);
-    res.render('event', {data: data[0]});
-});
 
 router.get('/events', async (req, res) => {
     const data = await pool.query('SELECT * FROM eventos');
@@ -59,6 +54,26 @@ router.post('/my-event/add-data', isLoggedIn, async(req, res) => {
     req.flash('success', 'New data added');
     res.redirect('/events');
  });  
+
+router.get('/about', async (req, res) => {
+    res.render('about');
+})
+
+
+
+router.post('/view-event/:id/add-user', isLoggedIn, async (req, res) => {
+    const { usuarios_id, eventos_id } = req.body;
+    parseInt(usuarios_id);
+    parseInt(eventos_id);
+    const newSuscriber = {
+        usuarios_id : usuarios_id,
+        eventos_id : eventos_id
+    }
+    await pool.query('INSERT INTO participante SET ? ', [newSuscriber]);
+    req.flash('success', 'New data added');
+
+});
+
 
 
 module.exports = router;

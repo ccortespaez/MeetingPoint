@@ -66,8 +66,10 @@
                             <li>Artista: {{data.artist}}</li>
                             <li>Contacto: {{data.phone}}</li>
                         </ul>
-                        <form action="" method="POST"></form>
-                        <button class="btn bg-primary ">Inscribirse al evento</button>
+                        <form action="/view-event/{{data.id}}/add-user" method="POST">
+                        <input type="text" name="usuarios_id" class="" value="{{user.id}}">
+                        <input type="text" name="eventos_id" class="" value="{{data.id}}">
+                        <button class="btn bg-primary" type="submit">Inscribirse al evento</button>
                         </form>
                     </div>
                 </div>
