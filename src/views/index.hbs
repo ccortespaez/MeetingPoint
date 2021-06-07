@@ -1,9 +1,9 @@
 <header>
-  <nav class="navbar fixed-top navbar-expand-lg navbar-dark p-md-3 ">
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark p-md-3">
     <div class="container">
-      <a class="navbar-brand" href="/">
-        <h4>Meeting Point</h4>
-      </a>
+      <a class="navbar-brand" href="#">
+    <img src="img/logo.svg" class="mt-2" width="100" alt="">
+  </a>
       <button id="toggleBtn" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
         arnpia-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -14,22 +14,22 @@
           <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link text-white" aria-current="page" href="/">Inicio</a>
+                <a class="nav-link text-white active" aria-current="page" href="/">Inicio</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white" href="#">Eventos</a>
+                <a class="nav-link text-white" href="/events">Eventos</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white" href="#">Contacto</a>
+                <a class="nav-link text-white" href="/about">Contacto</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white" href="#">¿Como usar Meeting Point?</a>
+                <a class="nav-link text-white" href="/">¿Como usar Meeting Point?</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link text-white" href="/login">Iniciar Sesión</a>
               </li>
               <li class="nav-item">
-                <button class="btn btn-sm mt-1 bg-secondary rounded-pill">Crear mi evento</button>
+                <a href="/my-event"><button class="btn btn-sm mt-1 bg-secondary rounded-pill">Crear mi evento</button></a>
               </li>
             </ul>
           </div>
@@ -43,7 +43,7 @@
   <div class="hero-container" data-aos="zoom-in" data-aos-delay="100">
     <h1 class="mb-4 pb-0">Creamos<br>Entretenimiento para ti.</h1>
     <br>
-    <a href="#about" class="btn bg-secondary rounded-pill">Ver todos los eventos</a>
+    <a href="events" class="btn bg-secondary rounded-pill btn-hero">Ver todos los eventos</a>
   </div>
 </section>
 
