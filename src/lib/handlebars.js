@@ -5,8 +5,7 @@
 */
 
 /** 
- * Constante que requiere el modulo {@link node_modules/timeago.js/lib/index}
- * @const format
+ * Constante que requiere el modulo TimeagoJS
  * @requires timeago.js 
  */
 const { format } = require('timeago.js');

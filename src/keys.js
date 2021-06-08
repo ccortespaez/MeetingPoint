@@ -1,8 +1,6 @@
-//Parametros base de datos
-
 /**
- * Modulo exportable que conecta con la base de datos 
- * @module
+ * Modulo exportable con las credenciales de la base de datos
+ * @module keys
 */
 module.exports = {
     /**

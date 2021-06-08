@@ -5,21 +5,21 @@
 */
 
 /** 
- * Constante que requiere el modulo {@link node_modules/@types/passport/index}
+ * Constante que requiere el modulo Passport
  * @const passport
  * @requires passport 
  */
 const passport = require('passport');
 
 /** 
- * Constante que requiere el modulo {@link node_modules/@types/passport/index}
+ * Constante que requiere passport-local del modulo Passport
  * @const LocalStrategy 
  * @requires LocalStrategy
  */
 const LocalStrategy = require('passport-local').Strategy;
 
 /** 
- * Constante que requiere el modulo {@link node_modules/@types/passport/index} 
+ * Constante que requiere mediante destructuring el deserializerUser del modulo Passport
  * @const deserializeUser 
  * @requires passport
  */

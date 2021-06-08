@@ -1,7 +1,34 @@
+/**
+ * Modulo exportable que crea la conexion con la base de datos
+ * @module database
+ * @author Cristóbal Cortés Páez
+ */
+
+/** 
+ * Constante que requiere el modulo de Mysql
+ * @const mysql
+ * @requires mysql
+ */
 const mysql = require('mysql');
+
+/** 
+ * Constante que requiere promisify del modulo util
+ * @const promisify
+ * @requires util
+ */
 const {promisify} = require('util');
+
+/** 
+ * Constante que requiere las credenciales de la base de datos
+ * @const database
+ * @requires keys
+ */
 const {database} = require('./keys');
 
+/**
+ * Constante que crea un pool de conexion
+ * @const pool
+ */
 const pool = mysql.createPool(database);
 pool.getConnection((error, connection) => {
     if(error){

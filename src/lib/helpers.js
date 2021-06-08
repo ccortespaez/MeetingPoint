@@ -5,7 +5,7 @@
 */
 
 /** 
- * Constante que requiere el modulo {@link node_modules/@types/bcryptjs/index}
+ * Constante que requiere el modulo BcryptJS para encriptacion de contraseñas
  * @const format
  * @requires timeago.js 
  */
