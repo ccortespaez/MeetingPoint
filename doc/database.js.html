@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: lib/handlebars.js</title>
+    <title>JSDoc: Source: database.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: lib/handlebars.js</h1>
+    <h1 class="page-title">Source: database.js</h1>
 
     
 
@@ -27,34 +27,55 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * Modulo exportable que formatea fechas 
- * @module handlebars
+ * Modulo exportable que crea la conexion con la base de datos
+ * @module database
  * @author Cristóbal Cortés Páez
-*/
+ */
 
 /** 
- * Constante que requiere el modulo TimeagoJS
- * @requires timeago.js 
+ * Constante que requiere el modulo de Mysql
+ * @const mysql
+ * @requires mysql
  */
-const { format } = require('timeago.js');
+const mysql = require('mysql');
+
+/** 
+ * Constante que requiere promisify del modulo util
+ * @const promisify
+ * @requires util
+ */
+const {promisify} = require('util');
+
+/** 
+ * Constante que requiere las credenciales de la base de datos
+ * @const database
+ * @requires keys
+ */
+const {database} = require('./keys');
 
 /**
- * @const helpers Objeto vacio 
- * @type {object}
+ * Constante que crea un pool de conexion
+ * @const pool
  */
-const helpers = {};
-/**
- * Funcion que formatea la fecha con timeago
- * @function
- * @param timeago
- * @returns retorna el formato timestamp
- */
-helpers.timeago = (timeago) => {
-    return format(timestamp);
-}
+const pool = mysql.createPool(database);
+pool.getConnection((error, connection) => {
+    if(error){
+        if(error.code === 'PROTOCOL_CONNECTION_LOST'){
+            console.error('DATABASE CONNECTION LOST');
+        }else if(error.code === 'ER_CON_COUNT_ERROR'){
+            console.error('DATABASE HAS TO MANY CONNECTION');
+        }else if(error.code === 'ECONNREFUSED'){
+            console.error('DATABASE CONNECTION WAS REFUSED');
+        }
 
+        if(connection) connection.release();
+        console.log('DB MYSQL CONNECTED')
+    }
+});
+pool.query = promisify(pool.query);
 
-module.exports = helpers;</code></pre>
+module.exports = pool;
+</code></pre>
         </article>
     </section>
 
