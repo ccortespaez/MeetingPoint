@@ -1,7 +1,42 @@
+/**
+ * Modulo que registra a los usuarios en la base de datos y autentica a los usuarios en el sistema
+ * @module passport
+ * @author Cristóbal Cortés Páez
+*/
+
+/** 
+ * Constante que requiere el modulo {@link node_modules/@types/passport/index}
+ * @const passport
+ * @requires passport 
+ */
 const passport = require('passport');
+
+/** 
+ * Constante que requiere el modulo {@link node_modules/@types/passport/index}
+ * @const LocalStrategy 
+ * @requires LocalStrategy
+ */
 const LocalStrategy = require('passport-local').Strategy;
-const { desearlizeUser } = require('passport');
+
+/** 
+ * Constante que requiere el modulo {@link node_modules/@types/passport/index} 
+ * @const deserializeUser 
+ * @requires passport
+ */
+const { deserializeUser } = require('passport');
+
+/** 
+ * Constante que requiere la conexion con la base de datos
+ * @const pool
+ * @requires database.js
+ */
 const pool = require('../database');
+
+/** 
+ * Constante que requiere el modulo creado para encriptar la contraseña
+ * @const helpers contiene la logica de la encriptacion de la contraseña
+ * @requires bcrypt
+ */
 const helpers = require('./helpers');
 
 passport.use('local.login', new LocalStrategy({
@@ -34,7 +69,7 @@ passport.use('local.register', new LocalStrategy({
 }, async (req, email, password, done) => {
     const { fullname, date } = req.body;
     //console.log(req.body, 'signup')
-    const newUser ={
+    const newUser = {
         email,
         password,
         fullname,
