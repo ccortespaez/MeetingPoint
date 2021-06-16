@@ -19,7 +19,7 @@
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                     data-bs-toggle="dropdown" aria-expanded="false">
-                                    <i class="bi bi-person-circle" style="font-size: 30px;"></i>
+                                    <i class="bi bi-person-circle text-white" style="font-size: 30px;"></i>
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <li>
@@ -48,11 +48,19 @@
                         </h4>
                     </div>
                     <div class="menu">
-                        <a href="panel_admin" class="d-block ps-3 border-0 a_sideBar">
-                            <i class='bx bxs-home bx-sm'></i>
-                            Inicio</a>
-                        <a href="#" class="d-block ps-3 mt-3 border-0 a_sideBar"><i class='bx bx-restaurant bx-sm'></i>
-                            Eventos</a>
+                        <ul>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                                    aria-expanded="false">Eventos</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="/admin">Tabla de eventos</a></li>
+                                    <li><a class="dropdown-item" href="/admin/add">Agregar nuevo evento</a></li>
+                                </ul>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/">Volver al sitio principal</a>
+                            </li>
+                            </li>
+                        </ul>
 
                     </div>
                 </div>
@@ -72,7 +80,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-12 bg-secondary rounded">
-                     <form action="/admin/data-edit/{{data.id}}" method="POST">
+                    <form action="/admin/data-edit/{{data.id}}" method="POST">
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="form-group mt-4">
@@ -107,7 +115,8 @@
                                 <div class="form-group mt-4">
                                     <label for="">Evento para mayores de</label>
                                     <input class="form-control form-control-success bg-primary"
-                                        placeholder="Ingrese la edad minima para participar" name="age" type="number" value={{data.age}}>
+                                        placeholder="Ingrese la edad minima para participar" name="age" type="number"
+                                        value={{data.age}}>
                                 </div>
                             </div>
                             <div class="col-lg-3">
@@ -123,14 +132,16 @@
                                 <div class="form-group mt-4">
                                     <label>Animador</label>
                                     <input class="form-control form-control-success bg-primary"
-                                        placeholder="Ingrese el nombre del animador/a" name="animator" value={{data.animator}}>
+                                        placeholder="Ingrese el nombre del animador/a" name="animator"
+                                        value={{data.animator}}>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group mt-4">
                                     <label>Artista</label>
                                     <input class="form-control form-control-success bg-primary"
-                                        placeholder="Ingrese el nombre del o los artistas" name="artist" value={{data.artist}}>
+                                        placeholder="Ingrese el nombre del o los artistas" name="artist"
+                                        value={{data.artist}}>
                                 </div>
 
                             </div>
@@ -146,28 +157,32 @@
                                 <div class="form-group mt-4">
                                     <label>Productora</label>
                                     <input class="form-control form-control-success bg-primary"
-                                        placeholder="Ingrese a la productora organizadora" name="producer" value={{data.producer}}>
+                                        placeholder="Ingrese a la productora organizadora" name="producer"
+                                        value={{data.producer}}>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group mt-4">
                                     <label>Aforo Maximo</label>
                                     <input class="form-control form-control-success bg-primary"
-                                        placeholder="Ingrese la ubicacion" name="capacity" type="number" value={{data.capacity}}>
+                                        placeholder="Ingrese la ubicacion" name="capacity" type="number"
+                                        value={{data.capacity}}>
                                 </div>
                             </div>
                             <div class="col-lg-3">
                                 <div class="form-group mt-4">
                                     <label>Fecha inicio</label>
                                     <input class="form-control form-control-success bg-primary"
-                                        placeholder="Ingrese la ubicacion" name="datestart" type="date" value={{data.datestart}}>
+                                        placeholder="Ingrese la ubicacion" name="datestart" type="date"
+                                        value={{data.datestart}}>
                                 </div>
                             </div>
                             <div class="col-lg-3">
                                 <div class="form-group mt-4">
                                     <label>Fecha termino</label>
                                     <input class="form-control form-control-success bg-primary"
-                                        placeholder="Ingrese la ubicacion" name="datefinish" type="date" value={{data.datefinish}}>
+                                        placeholder="Ingrese la ubicacion" name="datefinish" type="date"
+                                        value={{data.datefinish}}>
                                 </div>
                             </div>
                             <div class="col-lg-3">
@@ -183,7 +198,8 @@
                                     <div class="row">
                                         <div class="col-md-5">
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" value="Streaming" name="type"}>
+                                                <input class="form-check-input" type="radio" value="Streaming"
+                                                    name="type" }>
                                                 <label class="form-check-label" for="flexRadioDefault1"
                                                     value="Streaming" name="type">
                                                     Streaming
@@ -192,8 +208,9 @@
                                         </div>
                                         <div class="col-md">
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" value="Presencial" name="type">
-                                                <label class="form-check-label" for="flexRadioDefault2" >
+                                                <input class="form-check-input" type="radio" value="Presencial"
+                                                    name="type">
+                                                <label class="form-check-label" for="flexRadioDefault2">
                                                     Presencial
                                                 </label>
                                             </div>
