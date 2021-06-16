@@ -68,3 +68,7 @@ body {
 .menu .nav-link{
     color: white;
 }
+
+.btn-hover:hover{
+    color: red
+}

@@ -2,7 +2,7 @@
     <div class="d-flex" id="content-wrapper">
         <div class="w-100">
             <!-- Navbar -->
-            <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
+            <nav class="navbar navbar-expand-lg navbar-light bg-primary">
                 <div class="container">
                     <button class="btn admin-bg-grey" type="button" data-bs-toggle="offcanvas"
                         data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
@@ -92,19 +92,20 @@
                         <div class="row">
                             <div class="col-lg col-md-4  d-flex stat my-3">
                                 <div class="mx-auto">
-                                    <div class="btn-group btn-group-lg" role="group"><a class="btn bg-primary"
+                                    <div class="btn-group btn-group-lg" role="group">
+                                        <a class="btn bg-primary btn-hover"
                                             href="/admin/add">Crear evento</a></div>
                                 </div>
                             </div>
                             <div class="col-lg col-md-4  d-flex stat my-3">
                                 <div class="mx-auto">
-                                    <div class="btn-group btn-group-lg" role="group"><a class="btn bg-primary"
+                                    <div class="btn-group btn-group-lg" role="group"><a class="btn bg-primary btn-hover"
                                             href="/events">Ver eventos</a></div>
                                 </div>
                             </div>
                             <div class="col-lg col-md-4  d-flex stat my-3">
                                 <div class="mx-auto">
-                                    <div class="btn-group btn-group-lg" role="group"><a class="btn bg-primary"
+                                    <div class="btn-group btn-group-lg" role="group"><a class="btn bg-primary btn-hover"
                                             href="/">Volver al sitio principal</a></div>
                                 </div>
                             </div>
@@ -138,9 +139,9 @@
                                         <td>{{location}}</td>
                                         <td>{{type}}</td>
                                         <td>
-                                            <a href="/admin/view-event/{{id}}" class="btn btn-sm bg-primary">Ver
+                                            <a href="/admin/view-event/{{id}}" class="btn btn-sm bg-primary btn-hover">Ver
                                                 detalles</a>
-                                            <a href="/admin/data-edit/{{id}}" class="btn btn-sm bg-secondary">Editar</a>
+                                            <a href="/admin/data-edit/{{id}}" class="btn btn-sm bg-secondary btn-hover">Editar</a>
                                             <a href="/admin/data-delete/{{id}}" class="btn btn-sm btn-danger">Borrar</a>
                                         </td>
                                     </tr>

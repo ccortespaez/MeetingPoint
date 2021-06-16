@@ -3,9 +3,9 @@
 /**
  * Funcion que crea un effecto de scroll añadiendo o eliminando el color de fondo de la barra de navegación 
  * dependiendo de que punto en el eje Y se encuentre el scroll
+ * @author Cristóbal Cortés
  * @function effectScrollNav
- * @param {object} nav elemento que adquiere la barra de navegación
- * @param {object} togglerBtn elemento que adquiere el boton de despliegue de la barra de navegación en modo responsive
+ * 
  */
 function effectScrollNav() {
     let nav = document.querySelector('nav');
