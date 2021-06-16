@@ -350,3 +350,20 @@ input {
 .contact .info .phone {
   margin-top: 40px;
 }
+
+.about-select{
+  color:white;
+}
+
+.about-select:hover{
+  color:white;
+}
+
+.nav-link-border{
+  border-radius: 10px 10px 10px 10px;
+}
+
+.nav-link-border:hover{
+  background-color: var(--bg-secondary);
+  border-radius: 10px 10px 10px 10px;
+}
