@@ -39,29 +39,27 @@ const pool = require('../database');
  */
 const helpers = require('./helpers');
 
+//Autenticacion del usuario
 passport.use('local.login', new LocalStrategy({
     usernameField: 'email',
     passwordField: 'password',
     passReqToCallback: true
 }, async (req, email, password, done) => {
     const rows = await pool.query('SELECT * FROM usuarios WHERE email = ?', [email])
-    console.log(req.body);
     if (rows.length > 0) {
         const user = rows[0];
         const validPassword = await helpers.matchPassword(password, user.password);
         if (validPassword) {
             done(null, user, req.flash('success', 'Welcome ' + user.email));
-            console.log('funciono');
         } else {
             done(null, false, req.flash('message', 'Incorrect Password'));
-            console.log('no funciono');
         }
     } else {
         return done(null, false, req.flash('message', 'The username does not exits'));
-        console.log('error');
     }
 }));
 
+//Registro del usuario
 passport.use('local.register', new LocalStrategy({
     usernameField: 'email',
     passwordField: 'password',
@@ -83,7 +81,6 @@ passport.use('local.register', new LocalStrategy({
     newUser.id = result.insertId;
     return done(null, newUser);
 }));
-
 
 passport.serializeUser((user, done) => {
     done(null, user.id);

@@ -25,5 +25,4 @@ helpers.timeago = (timeago) => {
     return format(timestamp);
 }
 
-
 module.exports = helpers;

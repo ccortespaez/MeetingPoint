@@ -24,7 +24,6 @@ function effectScrollNav() {
             nav.classList.remove('bg-primary', 'shadow');
         }
     })
-        
 }
 
 effectScrollNav();
