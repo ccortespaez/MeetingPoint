@@ -5,6 +5,7 @@ const { isLoggedIn } = require("../lib/auth");
 
 router.get("/", async (req, res) => {
   const data = await pool.query("SELECT * FROM eventos");
+  console.log(req.isAuthenticated());
   res.render("index", { data });
 });
 

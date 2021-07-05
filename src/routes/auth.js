@@ -4,6 +4,7 @@ const { authenticate } = require('passport');
 const passport = require('passport');
 const { isLoggedIn, isNotLoggedIn } = require('../lib/auth');
 const { body, validationResult } = require('express-validator');
+const Swal = require('sweetalert2');
 
 router.get('/login', (req, res) => {
     res.render('auth/login');
@@ -15,6 +16,7 @@ router.post('/login', (req, res, next) => {
         failureRedirect: '/login',
         failureFlash: true
     })(req, res, next);
+    
 });
 
 router.get('/logout', (req, res) => {

@@ -39,6 +39,10 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
+app.use(function(req, res, next){
+    res.locals.isAuthenticated = req.isAuthenticated();
+    next();
+});
 
 //global variables
 app.use((req, res, next) => {

@@ -26,15 +26,20 @@
                 <a class="nav-link text-white" href="#">¿Como usar Meeting Point?</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white" href="/login">Iniciar Sesión</a>
-              </li>
-              <li class="nav-item">
                 <button class="btn btn-sm mt-1 bg-secondary rounded-pill">Crear mi
                   evento</button>
               </li>
+              {{#if isAuthenticated}}
+                  <li class="nav-item">
+                <a class="nav-link text-white" href="/logout">Cerrar sesión</a>
+              </li>        
+              {{else}}
+              <li class="nav-item">
+                <a class="nav-link text-white" href="/login">Iniciar Sesión</a>
+              </li>
+              {{/if}}
             </ul>
           </div>
-
         </div>
       </div>
     </div>
