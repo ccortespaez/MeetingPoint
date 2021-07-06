@@ -58,6 +58,9 @@ app.use(require('./routes/auth'));
 app.use(require('./routes/data'));
 app.use(require('./routes/community'));
 
+app.get('*', (req, res) => {
+    res.render('error');
+})
     
 //server
 app.listen(app.get('port'), () => {
