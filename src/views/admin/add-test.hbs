@@ -1,0 +1,222 @@
+<header>
+    <div class="d-flex" id="content-wrapper">
+        <div class="w-100">
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+                <div class="container">
+                    <button class="btn admin-bg-grey" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                        <i class="bi bi-caret-right-fill" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+                            aria-controls="offcanvasExample"></i>
+                    </button>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="bi bi-person-circle text-white" style="font-size: 30px;"></i>
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li>
+                                        <a class="dropdown-item" href="/logout">Cerrar sesión</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- Fin Navbar -->
+
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
+                aria-labelledby="offcanvasExampleLabel">
+                <div class="offcanvas-header bg-secondary">
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <!-- Sidebar -->
+                <div id="sidebar-container" class="bg-secondary">
+                    <div class="logo">
+                        <h4 class="text-light font-weight-bold">
+                            <hr />
+                            Panel Administrador
+                            <hr />
+                        </h4>
+                    </div>
+                    <div class="menu">
+                        <ul>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                                    aria-expanded="false">Eventos</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="/admin">Tabla de eventos</a></li>
+                                    <li><a class="dropdown-item" href="/admin/add">Agregar nuevo
+                                            evento</a></li>
+                                </ul>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/">Volver al sitio principal</a>
+                            </li>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+                <!-- Fin sidebar -->
+            </div>
+        </div>
+    </div>
+</header>
+
+<main class="admin-bg-grey">
+    <!-- Page Content -->
+    <div id="content" class="w-100 admin-bg-grey">
+        <div class="container mt-5">
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="col-md-6">
+                    <div class="card bg-secondary">
+                        <div class="card-body">
+                            <form action="/admin/add-data" method="POST">
+                                <h2 class="card-title text-center mt-2">Crear evento</h2>
+                                <div class="all-steps" id="all-steps">
+                                    <span class="step"></span>
+                                    <span class="step"></span>
+                                    <span class="step"></span>
+                                    <span class="step"></span>
+                                </div>
+                                <div class="tab">
+                                    <div class="form-group mt-4">
+                                        <label>Nombre del evento</label>
+                                        <input class="form-control form-control-success bg-primary"
+                                            placeholder="Ingrese el nombre de su evento" name="title" />
+                                    </div>
+                                    <div class="form-group mt-4">
+                                        <label>Descripción</label>
+                                        <textarea class="form-control bg-primary textarea-description" cols="30"
+                                            rows="2" name="description"></textarea>
+                                    </div>
+                                    <div class="form-group mt-4">
+                                        <label>Imagen</label>
+                                        <input class="form-control form-control-success bg-primary"
+                                            placeholder="URL de la imagen" name="image" />
+                                    </div>
+                                    <div class="form-group mt-4">
+                                        <label>Artista</label>
+                                        <input class="form-control form-control-success bg-primary"
+                                            placeholder="Ingrese el nombre del o los artistas" name="artist" />
+                                    </div>
+                                    <div class="form-group mt-4">
+                                    <label for="">Evento para mayores de</label>
+                                    <input class="form-control form-control-success bg-primary"
+                                        placeholder="Ingrese la edad minima para participar" name="age" type="number">
+                                </div>
+                                </div>
+                                <div class="tab">
+                                    <div class="form-group mt-4">
+                                        <label>Fecha inicio</label>
+                                        <input class="form-control form-control-success bg-primary"
+                                            placeholder="Ingrese la ubicacion" name="datestart" type="date" />
+                                    </div>
+                                    <div class="form-group mt-4">
+                                        <label>Fecha termino</label>
+                                        <input class="form-control form-control-success bg-primary"
+                                            placeholder="Ingrese la ubicacion" name="datefinish" type="date" />
+                                    </div>
+                                    <div class="form-group mt-4">
+                                        <label>Hora de inicio</label>
+                                        <input class="form-control form-control-success bg-primary"
+                                            placeholder="Ingrese la ubicacion" name="hour" type="time" />
+                                    </div>
+                                    <div class="form-group mt-4">
+                                        <label>Ubicacion</label>
+                                        <input class="form-control form-control-success bg-primary"
+                                            placeholder="Ingrese la ubicacion" name="location" />
+                                    </div>
+                                </div>
+                                <div class="tab">
+
+                                    <div class="row">
+                                        <div class="col-lg">
+                                            <div class="form-group mt-2">
+                                                <label>Aforo Maximo</label>
+                                                <input class="form-control form-control-success bg-primary"
+                                                    placeholder="Ingrese la ubicacion" name="capacity" type="number" />
+                                            </div>
+                                        </div>
+                                        <div class="col-lg">
+                                            <div class="form-group mt-2">
+                                                <label for="">Tipo de evento</label>
+                                                <div class="row">
+                                                    <div class="col-md-5">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio"
+                                                                id="flexRadioDefault1" value="Presencial" name="type" />
+                                                            <label class="form-check-label" for="flexRadioDefault1"
+                                                                value="Streaming" name="type">
+                                                                Streaming
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio"
+                                                                id="flexRadioDefault2" checked value="Presencial"
+                                                                name="type" />
+                                                            <label class="form-check-label" for="flexRadioDefault2">
+                                                                Presencial
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group mt-4">
+                                        <label>Plataforma Streaming</label>
+                                        <input class="form-control form-control-success bg-primary"
+                                            placeholder="URL de la retransmision" name="streaming" />
+                                    </div>
+                                </div>
+                                <div class="tab">
+                                    <div class="form-group mt-4">
+                                        <label>Productora</label>
+                                        <input class="form-control form-control-success bg-primary"
+                                            placeholder="Ingrese a la productora organizadora" name="producer" />
+                                    </div>
+                                    <div class="form-group mt-4">
+                                        <label>Animador</label>
+                                        <input class="form-control form-control-success bg-primary"
+                                            placeholder="Ingrese el nombre del animador/a" name="animator" />
+                                    </div>
+                                    <div class="form-group mt-4">
+                                        <label>Telefono de contacto</label>
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text bg-primary">+569</span>
+                                            <input type="number" class="form-control" name="phone" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-2" style="overflow:auto;" id="nextprevious">
+                                    <div class="buttons" style="float:right;">
+                                        <button class="btn bg-primary" type="button" id="prevBtn"
+                                            onclick="nextPrev(-1)">Atras</button>
+                                        <button class="btn bg-primary" type="button" id="nextBtn"
+                                            onclick="nextPrev(1)">Continuar</button>      
+                            </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</main>
+<script src="/js/dashboard.js"></script>
