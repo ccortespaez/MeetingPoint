@@ -14,5 +14,9 @@ router.get('/admin/view-event/:id', async (req, res) => {
     res.render('admin/view', {data: data[0]});
 })
 
+router.get('/admin/add-test', async (req,res) => {
+    res.render('admin/add-test');
+})
+
 
 module.exports = router;
