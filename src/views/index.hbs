@@ -1,7 +1,7 @@
 <header>
   <nav class="navbar fixed-top navbar-expand-lg navbar-dark p-md-3">
     <div class="container">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="/">
         <img src="img/logo.svg" class="mt-2" width="100" alt="" />
       </a>
       <button id="toggleBtn" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
@@ -26,9 +26,15 @@
                 <a class="nav-link nav-link-border text-white" href="/">¿Como usar Meeting
                   Point?</a>
               </li>
+               {{#if isAuthenticated}}
+                  <li class="nav-item">
+                <a class="nav-link text-white nav-link-border" href="/logout">Cerrar sesión</a>
+              </li>        
+              {{else}}
               <li class="nav-item">
-                <a class="nav-link nav-link-border text-white" href="/login">Iniciar Sesión</a>
+                <a class="nav-link text-white nav-link-border" href="/login">Iniciar Sesión</a>
               </li>
+              {{/if}}
               <li class="nav-item">
                 <a href="/my-event"><button class="btn btn-sm mt-1 bg-secondary rounded-pill">Crear mi
                     evento</button></a>
